@@ -24,7 +24,7 @@ var characterOneSalary = 100000.00;
 
 // make a variable called characterOneSalary and have it equal to "Web Developer"
 
-var characterOneProfessoin = "Web Developer";
+var characterOneProfession = "Web Developer";
 
 // make a variable called characterOneSpecies and have it equal to "cat"
 
@@ -107,71 +107,75 @@ var characterTwoSavings = characterTwoYearlyRent + characterTwoYearlyExpenses;
 //conditionals
 
 // write if statement to check if characterOneName is equal to "Mr. farley"
-
-if (characterOneName == "Mr. Farley") {
-    console.log("Hello Mr. Farley")
-};
-
     // write a else if and check if characterOneName === "Ms. Farley"
     // if it does === Ms. farley than console.log a string of hello Ms. farley
-
-else if (characterOneName === "Ms. Farley") {
-    console.log("Hello Ms. Farley")
-};
-
     // finally if they both dont apply else
     // console.log a string of hello stranger
- 
-else {
-    console.log("Hello stranger")
-}
+
+if (characterOneName == "Mr. Farley") {
+    console.log("Hello Mr. Farley");
+} else if (characterOneName === "Ms. Farley") {
+    console.log("Hello Ms. Farley");
+} else {
+    console.log("Hello stranger");
+};
 
 // write if statement check if characterOneAge greter than characterTwoAge
     // if characterOneAge is greater than characterTwoAge than console.log a string of  Mr. farley
     // else console.log a string of Ms. farley
 
 if (characterOneAge > characterTwoAge) {
-    
-}
-
+    console.log("Mr. Farley");
+} else {
+    console.log("Ms. Farley");
+};
 
 // write if statement check if characterOneLocation is equal to oakland
-
     // if characterOneLocation is equal to oakland console.log a string of raiders
-
     // else if check if characterTwoLocation is equal to a string of san francisco 
-
     //  console.log a string of Niners
-
     // if both condition doesn't apply write a else with a console.log of a string of warriors
 
+if (characterOneLocation === "oakland") {
+    console.log("Raiders");
+} else if (characterTwoLocation === "san francisco") {
+    console.log("Niners");
+} else {
+    console.log("warriors");
+};
 
 
 // write if statement check if characterOneRent greter than characterTwoRent
-
     // console.log of a string of Rent One
-
     // if rent one isn't high else
-
     // console.log of a string of Rent Two
 
+if (characterOneRent > characterTwoRent) {
+    console.log("Rent One");
+} else {
+    console.log("Rent Two");
+};
 
 
 // write if statement check if characterOneExpenses greter than characterTwoExpenses
-
     // console.log of a string of farley's shopping expense
-
     // if characterOneExpenses isn't greater than characterTwoExpenses else
-
     // console.log of a string of farley's needs kibbles
 
+if (characterOneExpenses > characterTwoExpenses) {
+    console.log(characterOneExpenses);
+} else {
+    console.log("farley's needs kibbles");
+};
 
 
 // write if statement to check fi characterOneProfession equal to a string of web developer and characterTwoProfession is a string of Accountant
-
     // console.log of a string of Look at Web Developer and a Accountant
-
     // if characterOneProfession and  characterTwoProfession doesnt equal those string else
-
    // console.log of a string of what ?
 
+if (characterOneProfession === "web developer" || characterTwoProfession === "Accountant") {
+    console.log("Look at Web Developer and a Accountant");
+} else {
+    console.log("what");
+};
