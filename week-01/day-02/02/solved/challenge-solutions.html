@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Box-Model</title>
+</head>
+<style>
+    /* create a div {} for styling*/
+    div {
+        /* create a padding of 50px*/
+        /* this will create a padding of 50px all around */
+        padding:50px; 
+    }
+    /* create a p {} for styling */
+    p {
+        /* add a margin of 0 */
+        margin: 0;
+        /* add padding of 15px */
+        padding: 15px;
+        /* add a font-size of 20px */
+        font-size: 20px;
+    }
+    .red-textbox-left {
+        /* add margin top to seperate the red box from the yellow, 200px */
+        margin-top: 200px;
+        /* add margin left of 50px */
+        margin-left: 50px;
+        float: left;
+        background-color: red;
+    }
+    .blue-textbox-right {
+        /* add margin right of 50px */
+        margin-right:50px;
+        float: right;
+        background-color: blue;
+    }
+    .yellow-textbox-initial {
+        /* add a margin-bottom of 50px */
+        margin-bottom: 50px;
+        float: initial;
+        background-color: yellow;
+    }
+    .green-textbox-clear {
+        /* add a margin top of 250px to seperate green from the other colors */
+        margin-top: 250px;
+        background-color: green;
+        clear: both;
+    }
+</style>
+
+<body>
+   <div class="red-textbox-left">
+        <p>
+            I'm a red text box
+        </p>
+    </div>
+    <div class="yellow-textbox-initial">
+        <p>
+            I'm a yellow text box
+        </p>
+    </div>
+    <div class="blue-textbox-right">
+        <p>
+            I'm a blue text box
+        </p>
+    </div>
+    <div class="green-textbox-clear">
+        <p>
+            I'm a green text box
+        </p>
+    </div>
+</body>
+
+</html>
