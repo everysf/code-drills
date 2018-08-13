@@ -19,11 +19,14 @@ $(document).ready(function() {
 
 		/* Base query url https://funwithajax.herokuapp.com/api/ */
 
-      /* 
-      1. 
+		/* 
+	  
+		1. 
 				Create a function call `getHeroes`. Put the closing bracket just before this function is invoked (towards the bottom of this file). 
 				
 			*/
+
+		function getHeroes() {
 
       /* 
       2. Create 3 variable for our query:
@@ -33,23 +36,35 @@ $(document).ready(function() {
         
         Because our request to this server is coming from a different app, there is a risk of running into a `cross-origin` error. Prepending the above url to our query url will handle this error for us.
 
-			  b.	create a variable named `baseURL` with the value `https://funwithajax.herokuapp.com/api`
+		b.	create a variable named `baseURL` with the value `https://funwithajax.herokuapp.com/api`
 
-				c.  create a variable with the name `query` with the value `"?q=heroes"`
-					(parameter `q` with the value `heroes`.) 
+		c.  create a variable with the name `query` with the value `"?q=heroes"`
+			(parameter `q` with the value `heroes`.) 
 
-					Example: to pass the parameter `q` with a value of `chicken` we can use `?q=chicken`
-					use `?`` to denote query parameter are being used
-					`q` for query 
-					followed by the parameter value
+		Example: to pass the parameter `q` with a value of `chicken` we can use `?q=chicken`
+			use `?`` to denote query parameter are being used
+			`q` for query 
+			followed by the parameter value
 			*/
+		var cors = "https://cors-anywhere.herokuapp.com/"
+		var baseURL = "https://funwithajax.herokuapp.com/api"
+		var query = "?q=heroes"
 
-      /* 
+	  /* 
+
+
       3.
-				Using ajax make a `GET` request to:
-          `cors` plus `baseURL` plus `query`
-          Close your promise (.then()) just before you close the function. We will be writing the rest of our code within the promise, ensuring that all this logic happens only once we've received a return from the API.
-			*/
+		Using ajax make a `GET` request to:
+        `cors` plus `baseURL` plus `query`
+        Close your promise (.then()) just before you close the function. We will be writing the rest of our code within the promise, ensuring that all this logic happens only once we've received a return from the API.
+		*//
+
+			$.ajax({
+				url: baseURL + query,
+				method: "GET"
+				}).then(function(response) {
+				console.log(response)
+
 
       /* 
       4.
@@ -81,12 +96,21 @@ $(document).ready(function() {
         Open up inspector tools and make sure your HTML looks like you expect it to.
 			*/
 
-      /* 
+			$("body").addClass("hero-BKG")
+			$("#wrap").addClass("blue")
+			$("#content").removeClass("weather-wrap", "music")
+			$("#content").addClass("heroes")
+	  /* 
+	  
+
+
       6. 
 				Before doing anything with the data make sure that you remove any elements inside the `#contents` container 
           remember `.empty()`
           
 			*/
+			
+			$("#contents").empty()
 
 			/* 
 			*****	Using jQuery *****
@@ -97,6 +121,9 @@ $(document).ready(function() {
 				create a `div` and store it to a variable called `row`
 				add a class of `row` to the `row div` 
 			*/
+
+			var row = $("<div>")
+			row.addClass("row")
 
       /* 
       7.
@@ -122,36 +149,58 @@ $(document).ready(function() {
 			  add a class of `characters` to the `characters div` 
 			 */
 
+		for (var i = 0; i < squad.length; i++) {
+			var col = $("<div>")
+			var header = $("<div>")
+			header.html("<h2>" + squad[i] + "</h2>")
+			col.append(header)
+
+
         /* 
         8.
           for each member in the current squad: 
           Hint: nested loop
 			  */
 
+			  for (var j = 0; j < heroes.length; j++) {
 			  	/* 
 			  		create a `div` and store it to a variable called `hero`
 			  		add a class of `hero` to the `hero div` 
 			  	*/
 
+				var hero = $("<div>")
+
 			  	/* 
 			  		creat a `div` and store it to a variable called `imgWrap`
 			  		add a class of `img-wrap` to the `imgWrap div` 
-			  	*/
+				*/
+				  
+				var imgWrap = $("<div>")
+				imgWrap.addClass("img-wrap")
 
 			  	/* 
 				  	create a `img` and store it to a variable called `image`
 				  	add a class of `hero-image` to the `image div`
 				  	add an attribute for `source` and the value being the current members image 
-			  	*/
+				*/
+				  
+				var image = $("<img>")
+				image.addClass("hero-image")
+				image.attr("src", member[j].image)
 
 			  	/* 
 			  		append `image` to `imgWrap` 
 			  	*/
 
+				imgWrap.append(image)
+
 			  	/* 
 				  	create a `p` and store it to a variable called `name`
 				  	add text of the current member's name to the `name div`
 			  	*/
+
+				var name = $("<p>")
+				name.text(member[j].name)
 
 			  	/* 
 				  	create a `p` and store it to a variable called `power`
@@ -159,13 +208,20 @@ $(document).ready(function() {
 				  		example : sleepig, eating, saving the world – saving the world would be the LAST listed power 
 				  */
 
+				var power = $("<p>")
+				power.text(member[k].power[power.length - 1])
+
           /* 
           9.
 				  	
 				  	append the `imgWrap`, `name`, and `power` to `hero`
 				  	append `hero` to `characters` 
 				  */
+				
+				hero.append(imgWrap + name + power)
+				characters.append(hero)
 
+				}
         /* 
         10.
 				  inside the first loop, but outside the second:
@@ -173,14 +229,26 @@ $(document).ready(function() {
 				  append `col` to `row`
 				*/
 
+				col.append(characters)
+				row.append(col)
+			}
         /* 
         11.
 			  	outside the loops 
 			  	append `row` to `#content` 
 			  */
+
+			$("#content").append(row)
+	
+
+
+
 getHeroes()
+
+})
+
+
         /* 
         12.
         BONUS Split these actions into multuple functions */
         
-});

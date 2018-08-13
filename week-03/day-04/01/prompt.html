@@ -108,10 +108,10 @@
         var newsDiv = $("<div>")
 
         $(newsDiv).append(response.articles[i].title + "<br>")
-        if (response.articles[i].author.length > 0) {
-          $(newsDiv).append(response.articles[i].author + "<br>")
-        } else {
+        if (!response.articles[i].author) {
           $(newsDiv).append("Kevin Macaraeg<br>")
+        } else {
+          $(newsDiv).append(response.articles[i].author + "<br>")
         }
         $(newsDiv).append(response.articles[i].description + "<br>")
         $(newsDiv).append("<hr>")

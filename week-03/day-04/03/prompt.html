@@ -38,7 +38,7 @@
     <h1 class="heading">Stock Photo Generator!!!</h1>
     <form id="form">
       <input type="text" id="imgQuery">
-      <input type="submit">
+      <input type="submit" id="submit">
     </form>
 
   <div class="holder"></div>
@@ -54,11 +54,23 @@
       });
 
       // ===================== YOUR CODE HERE ==================
+      $(document).on("submit", "#submit", function (event) {
+        event.preventDefault()
+      
+        var imgQuery = $("#imgQuery").val()
 
+        var queryURL = "https://api.unsplash.com/photos/?client_id=6b873028134f73897d34283e892ee492a3d055545b48a0cf94c5114ef99e41a7&query=" + imgQuery
 
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            console.log("hi")
+            console.log(response)
 
+          });
 
-
+      })
       //========================================================
 
     })

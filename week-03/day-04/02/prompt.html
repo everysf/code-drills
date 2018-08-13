@@ -95,7 +95,7 @@
         }
       });
 
-      $(document).on("submit", ".event-form", function (event) {
+      $("#eventForm").on("click", function (event) {
         event.preventDefault()
 
         // Remember, it is important that we capture the values of the form within the scope of this "submit" function. 
@@ -107,7 +107,7 @@
         var location = $("#location").val().trim(); // Grab the value of the #location input
 
         // Construct your query URL here using the values the user gave us.
-       queryURL = 'https://www.eventbriteapi.com/v3/events/search/?q=' + eventName + '&price=' + paid + '&location.address='+ location +'&token=WW43DOPLUTKD22WDGJ'
+       queryURL = 'https://www.eventbriteapi.com/v3/events/search/?q=' + eventName + '&price=' + paid + '&location.address='+ location +'&APIkey=WW43DOPLUTKD22WDGJ'
 
         $.ajax({
           url: queryURL,
@@ -115,14 +115,10 @@
         }).then(function(response) {
           // When dealing with a new API, always console log the response. 
           // This helps immensely with understanding what information is actually given to you
+
           console.log(response)
 
           // Display the results in the appropriate element on the DOM
-
-
-
-
-
 
         });
       })

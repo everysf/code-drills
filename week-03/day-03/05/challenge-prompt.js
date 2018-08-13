@@ -9,21 +9,20 @@
 
 function bubbleSortTwo(arr) {
     // ================= code goes here ===========================
-
-    
-
-
-
-
-
-
-
-
-
-    
+        do {
+            var swapped = false;
+            arr.forEach((num, i)){
+                if(num > arr[i+1]){
+                    var temp = num;
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                    swapped=true
+                }
+            }
+        } while(swapped === true)
+        return arr;
     // ============================================================
 }
-
 
 var age = [34, 23, 3, 76, 20, 84, 18, 9];
 var newAge = bubbleSortTwo(age);
