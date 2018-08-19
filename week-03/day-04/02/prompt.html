@@ -107,7 +107,7 @@
         var location = $("#location").val().trim(); // Grab the value of the #location input
 
         // Construct your query URL here using the values the user gave us.
-       queryURL = 'https://www.eventbriteapi.com/v3/events/search/?q=' + eventName + '&price=' + paid + '&location.address='+ location +'&APIkey=WW43DOPLUTKD22WDGJ'
+       queryURL = 'https://www.eventbriteapi.com/v3/events/search/?q=' + eventName + '&price=' + paid + '&location.address='+ location +'&token=XM5WP6L3BL3N7NRVMEKL'
 
         $.ajax({
           url: queryURL,

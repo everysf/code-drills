@@ -91,9 +91,13 @@
         var category = $("#category").val()
 
         $.ajax({
-          url: 'https://api.yelp.com/v3/businesses/search?term=' + category + '&location=' + location + "&apikey=VOJvm2XWNCagvhRKJZn7TbVyS_mnzP0RJIzlGe2ILsY9opHFJ8XWrBnpaiRkrbFB6iwWkkDxHoUrywk6mwVkdzcQn0BTen4jN860JV8TlRZ3MsGyhbU9nXXWjfxwW3Yx",
-          method: "GET",
-        }).then(function (response) {
+          url: queryURL,
+          method: “GET”,
+          headers:
+            {authorization:“Bearer SwHuY9REbVLus6zRXw234Xl_YqSdbRAtwkxTTfJQzKHTNkgTOzPmd8sSwr8_2F06kHybpBDgUQlS-rqqVI2PzzORzwz34_RCU70O-z9ZEGyBjqFI68HrJeqdWhRtW3Yx”},
+          data:
+          {client_id:“vLtg9YiB1BSoGolShNIhkA”}
+        }).then(function(response){ 
           console.log(response)
 
         })
