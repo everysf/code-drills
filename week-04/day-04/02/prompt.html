@@ -14,7 +14,15 @@
     var elevator = "^^^^^vv^v^vv^v^^^vvv^^^^^^v^^v^^^v^^vvv"
     
     function whichFloor(str) {
-
+        var floor = 0;  
+        for (var i = 0; i < str.length; i++) {
+          if (str[i] == "^") {
+            floor = floor + 1
+          } else {
+            floor = floor -1
+          }
+        }
+        return floor
     }
 
     console.log(whichFloor(elevator))

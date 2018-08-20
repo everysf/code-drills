@@ -10,10 +10,15 @@
 function factorial(num) {
   // -------------------- Your Code Here --------------------
 
+  for (var i = num-1; i > 0; i--) {
 
+    num = num * i
+    console.log(num)
 
+  }
   
-  
+  $("#output-area").text(num)
+
   // --------------------- End Code Area --------------------
 }
 

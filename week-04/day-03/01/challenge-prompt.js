@@ -10,6 +10,9 @@ console.log("////////////////////////////// QUESTION 1.1 \\\\\\\\\\\\\\\\\\\\\\\
 function fullName(obj) {
     // your code here
 
+    // var fullName = obj.firstName + " " + obj.lastName
+    // console.log(fullName)
+    // obj.push({'fullName': fullName})
 
 }
 
@@ -37,12 +40,11 @@ Return one of the following messages depending on the number given
 function checkAge(name, age) {
     // your code here
 
-
-
-
-
-
-
+    if (age < 21) {
+        return "Go home" + name
+    } else {
+        return "Welcome, " + name + "!"
+    }
 
 }
 
@@ -56,6 +58,8 @@ console.log("////////////////////////////// QUESTION 1.3 \\\\\\\\\\\\\\\\\\\\\\\
 // Given a length and a width, return the perimeter of a rectangle*/
 function perimeterOfARectangle(length, width) {
     // your code here
+    var perimeter = length * 2 + width * 2
+    return perimeter
 
 }
 
@@ -70,6 +74,9 @@ Given a word, "getAllLetters" returns an array containing every character in the
 function getAllLetters(str) {
     // your code here
 
+    var result = str.split('')
+    return result
+
 }
 var outputThree = getAllLetters('Farley');
 console.log(outputThree); // --> ['F', 'a', 'r', 'l', 'e', 'y']
@@ -83,10 +90,11 @@ if the number is equal to 10 return true and any other number return false*/
 function equalsTen(num) {
     // your code here
 
-
-
-
-
+    if (num === 10) {
+        return true
+    } else {
+        return false
+    }
 
 }
 var outputFour = equalsTen(9);

@@ -22,8 +22,13 @@
 function sing(maxBottles) {
   // -------------------- Your Code Here --------------------
 
-
+  console.log(maxBottles)
   
+  for (var i = maxBottles; i > 0; i--) {
+    var verse = $("<p>")
+    verse.text(i + " bottles of beer on the wall " + i + " bottles of beer. Take one down, pass it around, " + i + " bottles of beer on the wall!")
+    $("#output-area").append(verse)
+  }
 
 
   // --------------------- End Code Area --------------------

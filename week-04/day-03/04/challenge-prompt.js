@@ -8,11 +8,23 @@ Given an array of strings, "evenWordLengthOnly" returns an array containing only
 function evenWordLengthOnly(words) {
   // your code here
 
-  
+  var evenArray = []
 
+  function isEven(arg) {
+    if (arg % 2 == 0)
+      return true;
+    else
+      return false;
+  }
 
+  for (var i = 0; i < words.length; i++) {
+    var isItEven = isEven(words[i].length)
+    if (isItEven == true) {
+      evenArray.push(words[i])
+    }
+  }
 
-
+  return evenArray
 
   // code ends here
 }
@@ -31,15 +43,14 @@ Notes:
 function countWords(str) {
   // your code here
 
-  
+  var newObj = {}
+  var newArr = str.split(" ")
+  console.log(newArr)
 
-
-
-
-
-
-
-
+  for (var i = 0; i < newArr.length; i++) {
+    var newKey = newArr[i]
+    
+  }
 
     // code ends here
 }
