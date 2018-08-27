@@ -12,7 +12,9 @@
 function reverse(str) {
   // -------------------- Your Code Here --------------------
 
+  // Turn string into an array arrayOne
 
+  // Create a arrayTwo
 
 
 
